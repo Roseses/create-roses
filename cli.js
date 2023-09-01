@@ -17,7 +17,7 @@ const optionDefinitions = [
 const helpSections = [
   {
     header: 'create-roses',
-    content: '一个快速生成组件库搭建环境的脚手架'
+    content: '一个快速生成模板的脚手架'
   },
   {
     header: 'Options',
