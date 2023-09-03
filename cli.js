@@ -47,13 +47,16 @@ const promptsOptions = [
     type: 'select', //单选
     name: 'template',
     message: '请选择一个模板',
-    choices: [{ title: 'vitepress', value: 2 }]
+    choices: [
+      { title: 'vitepress', value: 2 },
+      { title: 'rosesyest', value: 1 }
+    ]
   }
 ];
 const options = commandLineArgs(optionDefinitions);
 
 const remoteList = {
-  // 1: 'https://gitee.com/geeksdidi/kittyui.git',
+  1: 'https://github.com/Roseses/rosesyest.git',
   2: 'https://github.com/Roseses/vitepress-demo.git'
 };
 const getUserInfo = async () => {
