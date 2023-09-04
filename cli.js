@@ -49,7 +49,8 @@ const promptsOptions = [
     message: '请选择一个模板',
     choices: [
       { title: 'vitepress', value: 2 },
-      { title: 'rosesyest', value: 1 }
+      { title: 'rosesyest', value: 1 },
+      { title: 'express + ts', value: 3 }
     ]
   }
 ];
@@ -57,7 +58,8 @@ const options = commandLineArgs(optionDefinitions);
 
 const remoteList = {
   1: 'https://github.com/Roseses/rosesyest.git',
-  2: 'https://github.com/Roseses/vitepress-demo.git'
+  2: 'https://github.com/Roseses/vitepress-demo.git',
+  3: 'https://github.com/Roseses/express-ts-demo.git'
 };
 const getUserInfo = async () => {
   const res = await prompts(promptsOptions);
