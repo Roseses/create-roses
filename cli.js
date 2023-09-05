@@ -48,10 +48,11 @@ const promptsOptions = [
     name: 'template',
     message: '请选择一个模板',
     choices: [
-      { title: 'vitepress', value: 2 },
       { title: 'rosesyest', value: 1 },
+      { title: 'vitepress', value: 2 },
       { title: 'express + ts', value: 3 },
-      { title: 'nodebat', value: 4 }
+      { title: 'nodebat', value: 4 },
+      { title: 'monorepe-template', value: 5}
     ]
   }
 ];
@@ -61,7 +62,8 @@ const remoteList = {
   1: 'https://github.com/Roseses/rosesyest.git',
   2: 'https://github.com/Roseses/vitepress-demo.git',
   3: 'https://github.com/Roseses/express-ts-demo.git',
-  4: 'https://github.com/Roseses/nodebat.git'
+  4: 'https://github.com/Roseses/nodebat.git',
+  5: 'https://github.com/Roseses/monorepe-template.git'
 };
 const getUserInfo = async () => {
   const res = await prompts(promptsOptions);
