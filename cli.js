@@ -41,7 +41,7 @@ const promptsOptions = [
   {
     type: 'text',
     name: 'name',
-    message: '请输入项目名称'
+    message: '请输入模板名称'
   },
   {
     type: 'select', //单选
@@ -50,7 +50,8 @@ const promptsOptions = [
     choices: [
       { title: 'vitepress', value: 2 },
       { title: 'rosesyest', value: 1 },
-      { title: 'express + ts', value: 3 }
+      { title: 'express + ts', value: 3 },
+      { title: 'nodebat', value: 4 }
     ]
   }
 ];
@@ -59,7 +60,8 @@ const options = commandLineArgs(optionDefinitions);
 const remoteList = {
   1: 'https://github.com/Roseses/rosesyest.git',
   2: 'https://github.com/Roseses/vitepress-demo.git',
-  3: 'https://github.com/Roseses/express-ts-demo.git'
+  3: 'https://github.com/Roseses/express-ts-demo.git',
+  4: 'https://github.com/Roseses/nodebat.git'
 };
 const getUserInfo = async () => {
   const res = await prompts(promptsOptions);
