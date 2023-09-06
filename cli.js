@@ -52,7 +52,8 @@ const promptsOptions = [
       { title: 'vitepress', value: 2 },
       { title: 'express + ts', value: 3 },
       { title: 'nodebat', value: 4 },
-      { title: 'monorepe-template', value: 5}
+      { title: 'monorepe-template', value: 5},
+      { title: 'vite+vue3+ts-template', value: 6 }
     ]
   }
 ];
@@ -63,7 +64,8 @@ const remoteList = {
   2: 'https://github.com/Roseses/vitepress-demo.git',
   3: 'https://github.com/Roseses/express-ts-demo.git',
   4: 'https://github.com/Roseses/nodebat.git',
-  5: 'https://github.com/Roseses/monorepe-template.git'
+  5: 'https://github.com/Roseses/monorepe-template.git',
+  6: 'https://github.com/Roseses/vite-ts-vue3-template.git'
 };
 const getUserInfo = async () => {
   const res = await prompts(promptsOptions);
