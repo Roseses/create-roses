@@ -8,15 +8,9 @@ import { optionDefinitions, helpSections, remoteList, promptsOptions } from './c
 const pkg = JSON.parse(
   await readFile(new URL('./package.json', import.meta.url))
 );
-//配置命令参数
-const optionDefinitions = optionDefinitions
 
-//帮助命令
-const helpSections = helpSections
-const promptsOptions = promptsOptions
 const options = commandLineArgs(optionDefinitions);
 
-const remoteList = remoteList
 const getUserInfo = async () => {
   const res = await prompts(promptsOptions);
   if (!res.name || !res.template) return;
