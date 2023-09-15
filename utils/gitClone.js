@@ -8,12 +8,14 @@ export default (remote, name, option) => {
     download(remote, name, option, (err) => {
       if (err) {
         downSpinner.fail();
+        console.log(chalk.green(`\r\n`));
         console.log('err', chalk.red(err));
         reject(err);
         return;
       }
       downSpinner.succeed(chalk.green('模板下载成功！'));
-      console.log(chalk.green(`cd ${name}\r\n`));
+      console.log(chalk.green(`\r\n`));
+      console.log(chalk.blue(`cd ${name}\r\n`));
       console.log(chalk.blue('pnpm install\r\n'));
       // console.log('pnpm run build:roses\r\n');
       // console.log('pnpm run roses:dev\r\n');
