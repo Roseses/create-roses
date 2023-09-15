@@ -14,7 +14,7 @@ export default (remote, name, option) => {
         reject(err);
         return;
       }
-      downSpinner.succeed(chalk.green('模板下载成功！'));
+      downSpinner.succeed(success('模板下载成功！'));
       log(success(`\r\n`));
       log(primary(`cd ${name}\n`));
       log(primary('pnpm install\r\n'));
