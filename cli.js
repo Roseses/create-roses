@@ -3,7 +3,7 @@ import commandLineUsage from 'command-line-usage';
 import gitClone from './utils/gitClone.js';
 import prompts from 'prompts';
 import { readFile } from 'fs/promises';
-import { optionDefinitions, helpSections, remoteList, promptsOptions } from './config/index'
+import { optionDefinitions, helpSections, remoteList, promptsOptions } from './config/index.js'
 
 const pkg = JSON.parse(
   await readFile(new URL('./package.json', import.meta.url))
