@@ -1,6 +1,7 @@
 import download from 'download-git-repo';
-import chalk from 'chalk';
+import { primary, error, success } from './chalk.js';
 import ora from 'ora';
+import log from './log.js'
 
 export default (remote, name, option) => {
   const downSpinner = ora('正在下载模板...').start();
@@ -8,15 +9,15 @@ export default (remote, name, option) => {
     download(remote, name, option, (err) => {
       if (err) {
         downSpinner.fail();
-        console.log(chalk.green(`\r\n`));
-        console.log('err', chalk.red(err));
+        log(success(`\r\n`));
+        log('err', error(err));
         reject(err);
         return;
       }
       downSpinner.succeed(chalk.green('模板下载成功！'));
-      console.log(chalk.green(`\r\n`));
-      console.log(chalk.blue(`cd ${name}\r\n`));
-      console.log(chalk.blue('pnpm install\r\n'));
+      log(success(`\r\n`));
+      log(primary(`cd ${name}\n`));
+      log(primary('pnpm install\r\n'));
       // console.log('pnpm run build:roses\r\n');
       // console.log('pnpm run roses:dev\r\n');
       resolve();
