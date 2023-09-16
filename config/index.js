@@ -66,9 +66,11 @@ export const logo = 'Roses'
 // 询问是否删除
 export const removePromptsList = [
   {
-    type: 'confirm',
+    type: 'toggle',
     name: 'delete',
     message: '当前目录下存在同名文件或文件夹, 删除后才能继续下载, 是否删除?',
-    initial: false
+    initial: false,
+    active: 'yes',
+    inactive: 'no'
   }
 ]
