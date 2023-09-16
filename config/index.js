@@ -59,3 +59,5 @@ export const remoteList = {
   5: 'https://github.com/Roseses/monorepe-template.git',
   6: 'https://github.com/Roseses/vite-ts-vue3-template.git'
 };
+
+export const logo = 'Roses'

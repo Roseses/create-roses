@@ -1,7 +1,9 @@
 import download from 'download-git-repo';
-import { primary, error, success } from './chalk.js';
+import { primary, error, success, warning } from './chalk.js';
 import ora from 'ora';
 import log from './log.js'
+import { logo } from "../config/index.js";
+import figlet from "./figlet.js";
 
 export default (remote, name, option) => {
   const downSpinner = ora('正在下载模板...').start();
@@ -16,11 +18,20 @@ export default (remote, name, option) => {
       }
       downSpinner.succeed(success('模板下载成功！'));
       log(success(`\r\n`));
-      log(primary(`cd ${name}\n`));
-      log(primary('pnpm install\r\n'));
-      // console.log('pnpm run build:roses\r\n');
-      // console.log('pnpm run roses:dev\r\n');
-      resolve();
+      figlet(`Hello ${logo} !!`, function (err, data) {
+        if (err) {
+          log("Something went wrong...");
+          console.dir(err);
+          return;
+        }
+        log(warning(data));
+        log(success(`\r\n`));
+        log(primary(`cd ${name}\n`));
+        log(primary('pnpm install\r\n'));
+        // console.log('pnpm run build:roses\r\n');
+        // console.log('pnpm run roses:dev\r\n');
+        resolve();
+      });
     });
   });
 };
