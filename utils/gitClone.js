@@ -4,10 +4,28 @@ import ora from 'ora';
 import log from './log.js'
 import { logo } from "../config/index.js";
 import figlet from "./figlet.js";
+import path from 'path'
+import { copy, pathExistsSync, removeSync, PROCESS_PWD } from "./fs.js";
+import prompts from 'prompts';
+import { removePromptsList } from '../config/index.js'
 
 export default (remote, name, option) => {
-  const downSpinner = ora('正在下载模板...').start();
   return new Promise((resolve, reject) => {
+    // 1. 检查模板名称是否已存在
+    const dirPath = path.resolve(PROCESS_PWD, `./${name}`)
+    const isExit = pathExistsSync(dirPath)
+    // 2. 如果存在则询问是否删除, 不存在直接进入下一步
+    if (isExit) {
+      const result = prompts(removePromptsList)
+      if (result.delete) {
+        removeSync(dirPath)
+      } else {
+        warning('下载模板取消!!')
+        return
+      }
+    }
+    // 3. 开始下载
+    const downSpinner = ora('正在下载模板...').start();
     download(remote, name, option, (err) => {
       if (err) {
         downSpinner.fail();

@@ -60,4 +60,15 @@ export const remoteList = {
   6: 'https://github.com/Roseses/vite-ts-vue3-template.git'
 };
 
+// 模板的logo
 export const logo = 'Roses'
+
+// 询问是否删除
+export const removePromptsList = [
+  {
+    type: 'confirm',
+    name: 'delete',
+    message: '当前目录下存在同名文件或文件夹, 删除后才能继续下载, 是否删除?',
+    initial: false
+  }
+]
