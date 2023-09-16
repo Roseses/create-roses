@@ -16,18 +16,20 @@ export default (remote, name, option) => {
         reject(err);
         return;
       }
-      downSpinner.succeed(success('模板下载成功！'));
       log(success(`\r\n`));
       figlet(`Hello ${logo} !!`, function (err, data) {
         if (err) {
-          log("Something went wrong...");
-          console.dir(err);
+          downSpinner.succeed(success('模板下载成功！'));
+          // log("Something went wrong...");
+          // console.dir(err);
           return;
         }
         log(warning(data));
         log(success(`\r\n`));
-        log(primary(`cd ${name}\n`));
-        log(primary('pnpm install\r\n'));
+        downSpinner.succeed(success('模板下载成功！'));
+        log(success(`\r\n`));
+        log(primary(`cd ${name}`));
+        log(primary('pnpm install\n'));
         // console.log('pnpm run build:roses\r\n');
         // console.log('pnpm run roses:dev\r\n');
         resolve();
