@@ -1,3 +1,4 @@
+
 // 配置命令参数
 export const optionDefinitions = [
   { name: 'version', alias: 'v', type: Boolean },
@@ -8,7 +9,7 @@ export const optionDefinitions = [
 export const helpSections = [
   {
     header: 'create-roses',
-    content: '一个快速生成模板的脚手架'
+    content: '一个快速生成模板项目或模块文件的脚手架'
   },
   {
     header: 'Options',
@@ -29,26 +30,20 @@ export const helpSections = [
   }
 ];
 
-export const promptsOptions = [
-  {
-    type: 'text',
-    name: 'name',
-    message: '请输入模板名称'
-  },
-  {
-    type: 'select', //单选
-    name: 'template',
-    message: '请选择一个模板',
-    choices: [
-      { title: 'rosesyest', value: 1 },
-      { title: 'vitepress', value: 2 },
-      { title: 'express + ts', value: 3 },
-      { title: 'nodebat', value: 4 },
-      { title: 'monorepe-template', value: 5},
-      { title: 'vite+vue3+ts-template', value: 6 }
-    ]
-  }
-];
+// 模块文件的选择
+const fileTemplateList = [
+  { title: 'decimal.js', value: 'decimal.ts' },
+]
+
+// 项目模板的选择
+const templateList = [
+  { title: 'rosesyest', value: 1 },
+  { title: 'vitepress', value: 2 },
+  { title: 'express + ts', value: 3 },
+  { title: 'nodebat', value: 4 },
+  { title: 'monorepe-template', value: 5},
+  { title: 'vite+vue3+ts-template', value: 6 }
+]
 
 // git模板项目地址
 export const remoteList = {
@@ -59,6 +54,40 @@ export const remoteList = {
   5: 'https://github.com/Roseses/monorepe-template.git',
   6: 'https://github.com/Roseses/vite-ts-vue3-template.git'
 };
+
+export const promptsOptions = [
+  {
+    type: 'select', // 单选
+    name: 'type',
+    message: '请问您是需要下载模块文件还是下载项目',
+    choices: [
+      { title: '模块', value: 1 },
+      { title: '项目', value: 2 }
+    ]
+  },
+  {
+    type: prev => prev === 2 ? 'text' : null,
+    name: 'name',
+    message: '请输入模板名称',
+    initial: 'template-name'
+  },
+  {
+    type: (_, result) => {
+      return !result.name ? null : 'select'
+    }, //单选
+    name: 'template',
+    message: '请选择模板',
+    choices: templateList
+  },
+  {
+    type: (_, result) => {
+      return result.type === 1 ? 'select' : null
+    },
+    name: 'fileTemplate',
+    message: '请选择模块',
+    choices: fileTemplateList
+  }
+];
 
 // 模板的logo
 export const logo = 'Roses'

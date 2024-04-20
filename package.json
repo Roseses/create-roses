@@ -5,7 +5,8 @@
   "bin": "index.js",
   "keywords": [
     "roses",
-    "vue3组件库"
+    "vue3组件库",
+    "模块"
   ],
   "author": "",
   "type": "module",
@@ -22,6 +23,7 @@
     "release-it": "^16.1.5"
   },
   "scripts": {
+    "test:prompts": "node ./test/prompts.test.js",
     "release": "release-it"
   },
   "repository": {
