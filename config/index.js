@@ -30,9 +30,13 @@ export const helpSections = [
   }
 ];
 
-// 模块文件的选择
+// 模块文件的选择 value: 必须为template/file/ 下的文件名
 const fileTemplateList = [
-  { title: 'decimal.js', value: 'decimal.ts' },
+  { title: 'decimal.js (decimal.js-ts语法-简单封装)', value: 'decimal.ts' },
+  {
+    title: 'lodash-fix-weapp (小程序-lodash-修复构建后全局变量undefinde问题)',
+    value: 'lodash-fix.js'
+  }
 ]
 
 // 项目模板的选择
