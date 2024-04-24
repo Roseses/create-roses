@@ -36,6 +36,10 @@ const fileTemplateList = [
   {
     title: 'lodash-fix-weapp (小程序-lodash-修复构建后全局变量undefinde问题)',
     value: 'lodash-fix.js'
+  },
+  {
+    title: 'vue-directive (vue自定义指令-js文件-按钮无法重复点击/elementui弹窗拖拽/按钮权限控制)',
+    value: 'vue-directive.js'
   }
 ]
 
