@@ -44,6 +44,10 @@ const fileTemplateList = [
   {
     title: 'vue2-el-table (数据展示与分页)',
     value: 'vue2-Table.MD'
+  },
+  {
+    title: 'vue-echarts (vue2@2.7.15 + echarts@4.9.0 + vue-echarts^5.0.0-beta.0 简单封装)',
+    value: 'vue-echarts.MD'
   }
 ]
 
