@@ -48,6 +48,10 @@ const fileTemplateList = [
   {
     title: 'vue-echarts (vue2@2.7.15 + echarts@4.9.0 + vue-echarts^5.0.0-beta.0 简单封装)',
     value: 'vue-echarts.MD'
+  },
+  {
+    title: 'vue2-qrcodejs2 (vue2 + qrcodejs2 + 二维码生成)',
+    value: 'vue2-qrcodejs2.MD'
   }
 ]
 
