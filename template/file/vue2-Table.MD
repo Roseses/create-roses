@@ -15,6 +15,7 @@
             :label="col.label"
             :prop="col.prop"
             :align="col.align || 'center'"
+            :fixed="typeof col.fixed === 'undefined' ? false : col.fixed"
           >
             <template
               slot-scope="scope"
@@ -25,16 +26,21 @@
                 {{ col.render(scope.row) }}
               </template>
               <template
+                v-else-if="col.slotName"
+              >
+                <slot :name="col.slotName" :row="scope.row"></slot>
+              </template>
+              <template
                 v-else
               >
-                {{ typeof scope.row[col.prop] === 'undefined' ? '-' : scope.row[col.prop] }}
+                {{ typeof scope.row[col.prop] === 'undefined' ? '' : scope.row[col.prop] }}
               </template>
             </template>
           </el-table-column>
         </el-table>
       </el-col>
     </el-row>
-    <el-row>
+    <el-row v-if="!!pageSize">
       <el-col>
         <el-pagination
           @size-change="sizeChangeHandle"
