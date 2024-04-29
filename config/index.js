@@ -50,7 +50,7 @@ const fileTemplateList = [
     value: 'vue-echarts.MD'
   },
   {
-    title: 'vue2-qrcodejs2 (vue2 + qrcodejs2 + 二维码生成)',
+    title: 'vue2-qrcodejs2 (vue2 + qrcodejs2 + html2canvas  + 二维码生成/下载为图片)',
     value: 'vue2-qrcodejs2.MD'
   }
 ]
