@@ -56,7 +56,11 @@ const fileTemplateList = [
   {
     title: 'cookie.js (xe-utils)',
     value: 'cookie.js'
-,  }
+  },
+  {
+    title: 'jszip (下载压缩文件 + xe-utils + file-saver - jszip)',
+    value: 'downZip.MD'
+  }
 ]
 
 // 项目模板的选择
