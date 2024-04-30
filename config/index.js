@@ -52,7 +52,11 @@ const fileTemplateList = [
   {
     title: 'vue2-qrcodejs2 (vue2 + qrcodejs2 + html2canvas  + 二维码生成/下载为图片)',
     value: 'vue2-qrcodejs2.MD'
-  }
+  },
+  {
+    title: 'cookie.js (xe-utils)',
+    value: 'cookie.js'
+,  }
 ]
 
 // 项目模板的选择
