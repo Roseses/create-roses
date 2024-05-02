@@ -60,6 +60,10 @@ const fileTemplateList = [
   {
     title: 'jszip (下载压缩文件 + xe-utils + file-saver - jszip)',
     value: 'downZip.MD'
+  },
+  {
+    title: 'xe-utils (javascript工具类 + 数学/类型/防抖/节流/合并/深浅克隆等)',
+    value: 'xe-utils.MD'
   }
 ]
 
